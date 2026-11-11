@@ -17,3 +17,5 @@ CTFd/uploads/**/*
 **/__pycache__
 .venv*
 venv*
+# Keep Render secret certificate out of the Docker image
+ca.pem
