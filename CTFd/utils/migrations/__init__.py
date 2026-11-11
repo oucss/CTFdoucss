@@ -19,6 +19,9 @@ def create_database():
     if url.drivername == "postgres":
         url = url.set(drivername="postgresql")
 
+    if url.drivername in ("mysql", "mysql+mysqldb"):
+        url = url.set(drivername="mysql+pymysql")
+
     if url.drivername.startswith("mysql"):
         url = url.update_query_dict({"charset": "utf8mb4"})
 
